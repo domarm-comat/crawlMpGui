@@ -13,7 +13,7 @@ app = QApplication(sys.argv)
 w = ResultsWidget()
 w.show()
 
-manager = CrawlMp(CrawlerSearchFs, links=["/home"], num_proc=8, pattern="\.zip$", mode=MODE_EXTENDED)
+manager = CrawlMp(CrawlerSearchFs, links=["/"], num_proc=8, pattern=".", mode=MODE_EXTENDED)
 manager.start(lambda m: w.sig_update_results.emit(m.results))
 
 app.exec()

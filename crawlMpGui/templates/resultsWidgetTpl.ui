@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
+    <width>752</width>
     <height>324</height>
    </rect>
   </property>
@@ -17,12 +17,31 @@
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="lyt_paging">
      <item>
+      <widget class="QLabel" name="label_status">
+       <property name="minimumSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../resources/resources.qrc">:/base/loading.gif</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="button_first_page">
        <property name="maximumSize">
         <size>
          <width>30</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="toolTip">
+        <string>Jump to first page</string>
        </property>
        <property name="text">
         <string>|&lt;</string>
@@ -37,6 +56,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Jump to previous page</string>
+       </property>
        <property name="text">
         <string>&lt;</string>
        </property>
@@ -46,9 +68,12 @@
       <widget class="QSpinBox" name="input_current_page">
        <property name="minimumSize">
         <size>
-         <width>50</width>
+         <width>75</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="toolTip">
+        <string>Current page / Total pages</string>
        </property>
        <property name="minimum">
         <number>1</number>
@@ -66,6 +91,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Jump to next page</string>
+       </property>
        <property name="text">
         <string>&gt;</string>
        </property>
@@ -79,66 +107,65 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Jump to last page</string>
+       </property>
        <property name="text">
         <string>&gt;|</string>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QComboBox" name="input_category">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="placeholderText">
-          <string>Filter by regexp</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="text">
-          <string>Filter</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QComboBox" name="input_category">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="input_filler">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="placeholderText">
+        <string>Filter by regexp</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_filter">
+       <property name="text">
+        <string>Filter</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -172,7 +199,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>button_previous_page</sender>

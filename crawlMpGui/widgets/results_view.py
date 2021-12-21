@@ -1,12 +1,12 @@
 from typing import Any
 
-from PyQt6.QtCore import QAbstractTableModel, QModelIndex, Qt
+from PyQt6.QtCore import QAbstractTableModel, QModelIndex, Qt, pyqtSignal
 from PyQt6.QtGui import QColor
-
-from crawlMp.results import Results
 
 
 class ResultsViewModel(QAbstractTableModel):
+
+    sig_start_sorting = pyqtSignal(int, Qt.SortOrder)
 
     def __init__(self, hits: list, header: list, count_offset=0):
         self.hits = hits
@@ -35,3 +35,5 @@ class ResultsViewModel(QAbstractTableModel):
             elif orientation == Qt.Orientation.Vertical:
                 return f" {self.count_offset + section + 1} "
 
+    def sort(self, column: int, order: Qt.SortOrder = ...) -> None:
+        self.sig_start_sorting.emit(column, order)
