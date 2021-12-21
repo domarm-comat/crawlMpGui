@@ -19,3 +19,4 @@ class ResultsWidget(QWidget, Ui_Form):
     def set_results(self, results: Results) -> None:
         model = ResultsViewModel(results)
         self.view_results.setModel(model)
+        self.input_category.addItems(results.hits_header)

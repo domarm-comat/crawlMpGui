@@ -10,8 +10,8 @@ class ResultsViewModel(QAbstractTableModel):
 
     def __init__(self, results: Results):
         self.results = results
-        self.row_color_1 = QColor("#eeeeee")
-        self.row_color_2 = QColor("#d7d7d7")
+        self.row_color_1 = QColor("#ffffff")
+        self.row_color_2 = QColor("#d7efe0")
         QAbstractTableModel.__init__(self)
 
     def rowCount(self, parent: QModelIndex = ...) -> int:
@@ -22,7 +22,7 @@ class ResultsViewModel(QAbstractTableModel):
 
     def data(self, index: QModelIndex, role: int = ...) -> Any:
         if role == Qt.ItemDataRole.DisplayRole:
-            return self.results.hits[index.row()][index.column()]
+            return f" {self.results.hits[index.row()][index.column()]} "
         elif role == Qt.ItemDataRole.BackgroundRole:
             return self.row_color_1 if index.row() % 2 else self.row_color_2
 
@@ -31,4 +31,4 @@ class ResultsViewModel(QAbstractTableModel):
             if orientation == Qt.Orientation.Horizontal:
                 return self.results.hits_header[section]
             elif orientation == Qt.Orientation.Vertical:
-                return section + 1
+                return f" {section + 1} "
