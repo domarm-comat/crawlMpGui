@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>729</width>
+    <width>700</width>
     <height>324</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="lyt_paging">
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="button_first_page">
        <property name="maximumSize">
         <size>
          <width>30</width>
@@ -30,7 +30,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="button_previous_page">
        <property name="maximumSize">
         <size>
          <width>30</width>
@@ -43,14 +43,23 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox">
+      <widget class="QSpinBox" name="input_current_page">
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
        <property name="maximum">
         <number>9999999</number>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="button_next_page">
        <property name="maximumSize">
         <size>
          <width>30</width>
@@ -63,7 +72,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="button_last_page">
        <property name="maximumSize">
         <size>
          <width>30</width>
@@ -164,5 +173,93 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>button_previous_page</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>previous_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>30</x>
+     <y>-81</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_next_page</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>next_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>-42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_first_page</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>first_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-70</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_last_page</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>last_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>198</x>
+     <y>-58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>input_current_page</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>set_page(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>92</x>
+     <y>-56</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>next_page()</slot>
+  <slot>previous_page()</slot>
+  <slot>first_page()</slot>
+  <slot>last_page()</slot>
+  <slot>set_page(int)</slot>
+ </slots>
 </ui>

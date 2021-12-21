@@ -8,27 +8,30 @@ from crawlMp.results import Results
 
 class ResultsViewModel(QAbstractTableModel):
 
-    def __init__(self, results: Results):
-        self.results = results
+    def __init__(self, hits: list, header: list, count_offset=0):
+        self.hits = hits
+        self.header = header
+        self.count_offset = count_offset
         self.row_color_1 = QColor("#ffffff")
         self.row_color_2 = QColor("#d7efe0")
         QAbstractTableModel.__init__(self)
 
     def rowCount(self, parent: QModelIndex = ...) -> int:
-        return len(self.results.hits)
+        return len(self.hits)
 
     def columnCount(self, parent: QModelIndex = ...) -> int:
-        return len(self.results.hits_header)
+        return len(self.header)
 
     def data(self, index: QModelIndex, role: int = ...) -> Any:
         if role == Qt.ItemDataRole.DisplayRole:
-            return f" {self.results.hits[index.row()][index.column()]} "
+            return f" {self.hits[index.row()][index.column()]} "
         elif role == Qt.ItemDataRole.BackgroundRole:
             return self.row_color_1 if index.row() % 2 else self.row_color_2
 
     def headerData(self, section: int, orientation: Qt.Orientation, role: int = ...) -> Any:
         if role == Qt.ItemDataRole.DisplayRole:
             if orientation == Qt.Orientation.Horizontal:
-                return self.results.hits_header[section]
+                return self.header[section]
             elif orientation == Qt.Orientation.Vertical:
-                return f" {section + 1} "
+                return f" {self.count_offset + section + 1} "
+
