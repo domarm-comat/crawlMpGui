@@ -210,12 +210,12 @@
    <slot>previous_page()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>56</x>
+     <x>85</x>
      <y>17</y>
     </hint>
     <hint type="destinationlabel">
      <x>30</x>
-     <y>-81</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -231,7 +231,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>170</x>
-     <y>-42</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -242,11 +242,11 @@
    <slot>first_page()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>16</x>
+     <x>45</x>
      <y>23</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-70</x>
+     <x>0</x>
      <y>27</y>
     </hint>
    </hints>
@@ -258,12 +258,12 @@
    <slot>last_page()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
+     <x>224</x>
      <y>23</y>
     </hint>
     <hint type="destinationlabel">
      <x>198</x>
-     <y>-58</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -274,12 +274,44 @@
    <slot>set_page(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>100</x>
+     <x>129</x>
      <y>22</y>
     </hint>
     <hint type="destinationlabel">
      <x>92</x>
-     <y>-56</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>input_category</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>column_filter_changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>-129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_filter</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>filter_results()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>673</x>
+     <y>14</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>-65</y>
     </hint>
    </hints>
   </connection>
@@ -290,5 +322,7 @@
   <slot>first_page()</slot>
   <slot>last_page()</slot>
   <slot>set_page(int)</slot>
+  <slot>column_filter_changed(int)</slot>
+  <slot>filter_results()</slot>
  </slots>
 </ui>

@@ -82,6 +82,8 @@ class Ui_Form(object):
         self.button_first_page.clicked.connect(Form.first_page)
         self.button_last_page.clicked.connect(Form.last_page)
         self.input_current_page.valueChanged['int'].connect(Form.set_page)
+        self.input_category.currentIndexChanged['int'].connect(Form.column_filter_changed)
+        self.button_filter.clicked.connect(Form.filter_results)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):

@@ -14,7 +14,7 @@ class ResultsViewModel(QAbstractTableModel):
         self.count_offset = count_offset
         self.row_color_1 = QColor("#ffffff")
         self.row_color_2 = QColor("#d7efe0")
-        QAbstractTableModel.__init__(self)
+        super().__init__()
 
     def rowCount(self, parent: QModelIndex = ...) -> int:
         return len(self.hits)
@@ -31,7 +31,8 @@ class ResultsViewModel(QAbstractTableModel):
     def headerData(self, section: int, orientation: Qt.Orientation, role: int = ...) -> Any:
         if role == Qt.ItemDataRole.DisplayRole:
             if orientation == Qt.Orientation.Horizontal:
-                return self.header[section]
+                unit = f" ({self.header[section][2]})" if self.header[section][2] is not None else ""
+                return self.header[section][0].value + unit
             elif orientation == Qt.Orientation.Vertical:
                 return f" {self.count_offset + section + 1} "
 
