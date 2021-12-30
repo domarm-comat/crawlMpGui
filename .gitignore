@@ -1,0 +1,12 @@
+/build/
+/dist/
+/.idea/
+/crawlMp.egg-info/
+*.pyc
+*.log
+*.log.*
+/htmlcov/
+/.cache/
+/venv/
+/.pytest_cache
+.coverage

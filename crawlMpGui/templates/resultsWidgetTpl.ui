@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>752</width>
+    <width>837</width>
     <height>324</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../resources/resources.qrc">:/base/loading.gif</pixmap>
+        <pixmap>:/base/loading.gif</pixmap>
        </property>
       </widget>
      </item>
@@ -145,6 +145,12 @@
          <height>0</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Select column to filter on</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
       </widget>
      </item>
      <item>
@@ -161,9 +167,22 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="button_filter">
+      <widget class="QPushButton" name="button_filter_apply">
+       <property name="toolTip">
+        <string>Apply filter</string>
+       </property>
        <property name="text">
-        <string>Filter</string>
+        <string> Apply</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_filter_reset">
+       <property name="toolTip">
+        <string>Reset filters</string>
+       </property>
+       <property name="text">
+        <string> Reset</string>
        </property>
       </widget>
      </item>
@@ -295,12 +314,12 @@
     </hint>
     <hint type="destinationlabel">
      <x>344</x>
-     <y>-129</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>button_filter</sender>
+   <sender>button_filter_apply</sender>
    <signal>clicked()</signal>
    <receiver>Form</receiver>
    <slot>filter_results()</slot>
@@ -311,7 +330,23 @@
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
-     <y>-65</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_filter_reset</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>filter_reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>777</x>
+     <y>10</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>765</x>
+     <y>-72</y>
     </hint>
    </hints>
   </connection>
@@ -324,5 +359,6 @@
   <slot>set_page(int)</slot>
   <slot>column_filter_changed(int)</slot>
   <slot>filter_results()</slot>
+  <slot>filter_reset()</slot>
  </slots>
 </ui>
