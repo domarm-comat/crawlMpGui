@@ -12,10 +12,6 @@ from crawlMpGui.templates.resultsWidgetTpl import Ui_Form
 from crawlMpGui.widgets.results_view import ResultsViewModel
 
 
-def ss(a):
-    return True if a[1].search(a[0]) else None
-
-
 class ResultsWidget(QWidget, Ui_Form):
     sig_update_results = pyqtSignal(Results)
     sig_sorting_done = pyqtSignal()
@@ -29,10 +25,12 @@ class ResultsWidget(QWidget, Ui_Form):
         self.results = None
         self.results_copy = None
         self.setupUi(self)
-        self.done_icon = QPixmap("icons:done.png").scaledToHeight(24)
-        self.loading_movie = QMovie("icons:loading.gif")
+        # Set icon buttons
         self.button_filter_apply.setIcon(QIcon("icons:arrow-right.png"))
         self.button_filter_reset.setIcon(QIcon("icons:reset.png"))
+        # Preload resources
+        self.done_icon = QPixmap("icons:done.png").scaledToHeight(24)
+        self.loading_movie = QMovie("icons:loading.gif")
         self.loading_movie.setScaledSize(QSize(24, 24))
         self.loading_movie.start()
 
@@ -150,6 +148,7 @@ class ResultsWidget(QWidget, Ui_Form):
     def filter_results(self):
         header_index = self.input_category.currentIndex()
         header_name, header_type, header_unit = self.results.hits_header[header_index]
+        filter_value = self.input_filler.text()
 
         if header_type in (float, int):
             if not re.match("^\s?([<>!][=]?|==)\s?[+-]?([0-9]*[.])?[0-9]+$", self.input_filler.text()):
@@ -157,12 +156,12 @@ class ResultsWidget(QWidget, Ui_Form):
                 err.showMessage("Wrong filter pattern!")
                 return
             else:
-                self.set_loading()
-                Thread(target=self._eval_filter_thread, args=(self.input_filler.text(), header_index)).start()
+                filter_method = self._eval_filter_thread
         else:
-            filter_expression = re.compile(self.input_filler.text())
-            self.set_loading()
-            Thread(target=self._regexp_filter_thread, args=(filter_expression, header_index)).start()
+            filter_method, filter_value = self._regexp_filter_thread, re.compile(filter_value)
+
+        self.set_loading()
+        Thread(target=filter_method, args=(filter_value, header_index)).start()
 
     def _regexp_filter_thread(self, regexp, index):
         if self.results_copy is None:
