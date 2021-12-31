@@ -6,11 +6,11 @@ import signal
 import sys
 
 from PyQt6.QtWidgets import QApplication
-from crawlMp import __version__
 from crawlMp.crawlMp import CrawlMp
 from crawlMp.crawlers.crawler_fs import CrawlerSearchFs
 from crawlMp.enums import Mode
 
+from crawlMpGui import __version__
 from crawlMpGui.widgets.results_widget import ResultsWidget
 
 description = [

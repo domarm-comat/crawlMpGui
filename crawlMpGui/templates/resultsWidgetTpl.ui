@@ -1,364 +1,364 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>837</width>
-    <height>324</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <layout class="QHBoxLayout" name="lyt_paging">
-     <item>
-      <widget class="QLabel" name="label_status">
-       <property name="minimumSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/base/loading.gif</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="button_first_page">
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Jump to first page</string>
-       </property>
-       <property name="text">
-        <string>|&lt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="button_previous_page">
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Jump to previous page</string>
-       </property>
-       <property name="text">
-        <string>&lt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="input_current_page">
-       <property name="minimumSize">
-        <size>
-         <width>75</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Current page / Total pages</string>
-       </property>
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="maximum">
-        <number>9999999</number>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="button_next_page">
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Jump to next page</string>
-       </property>
-       <property name="text">
-        <string>&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="button_last_page">
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Jump to last page</string>
-       </property>
-       <property name="text">
-        <string>&gt;|</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QComboBox" name="input_category">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>150</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Select column to filter on</string>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::RightToLeft</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="input_filler">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="placeholderText">
-        <string>Filter by regexp</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="button_filter_apply">
-       <property name="toolTip">
-        <string>Apply filter</string>
-       </property>
-       <property name="text">
-        <string> Apply</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="button_filter_reset">
-       <property name="toolTip">
-        <string>Reset filters</string>
-       </property>
-       <property name="text">
-        <string> Reset</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0">
-    <widget class="QTableView" name="view_results">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
-     </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::ContiguousSelection</enum>
-     </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectRows</enum>
-     </property>
-     <property name="textElideMode">
-      <enum>Qt::ElideNone</enum>
-     </property>
-     <property name="sortingEnabled">
-      <bool>true</bool>
-     </property>
-     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
+    <class>Form</class>
+    <widget class="QWidget" name="Form">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>837</width>
+                <height>324</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+                <layout class="QHBoxLayout" name="lyt_paging">
+                    <item>
+                        <widget class="QLabel" name="label_status">
+                            <property name="minimumSize">
+                                <size>
+                                    <width>24</width>
+                                    <height>24</height>
+                                </size>
+                            </property>
+                            <property name="text">
+                                <string/>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>:/base/loading.gif</pixmap>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="button_first_page">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>30</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="toolTip">
+                                <string>Jump to first page</string>
+                            </property>
+                            <property name="text">
+                                <string>|&lt;</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="button_previous_page">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>30</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="toolTip">
+                                <string>Jump to previous page</string>
+                            </property>
+                            <property name="text">
+                                <string>&lt;</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QSpinBox" name="input_current_page">
+                            <property name="minimumSize">
+                                <size>
+                                    <width>75</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="toolTip">
+                                <string>Current page / Total pages</string>
+                            </property>
+                            <property name="minimum">
+                                <number>1</number>
+                            </property>
+                            <property name="maximum">
+                                <number>9999999</number>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="button_next_page">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>30</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="toolTip">
+                                <string>Jump to next page</string>
+                            </property>
+                            <property name="text">
+                                <string>&gt;</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="button_last_page">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>30</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="toolTip">
+                                <string>Jump to last page</string>
+                            </property>
+                            <property name="text">
+                                <string>&gt;|</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <spacer name="horizontalSpacer">
+                            <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Minimum</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
+                    <item>
+                        <widget class="QComboBox" name="input_category">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>150</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="toolTip">
+                                <string>Select column to filter on</string>
+                            </property>
+                            <property name="layoutDirection">
+                                <enum>Qt::RightToLeft</enum>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QLineEdit" name="input_filler">
+                            <property name="minimumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="placeholderText">
+                                <string>Filter by regexp</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="button_filter_apply">
+                            <property name="toolTip">
+                                <string>Apply filter</string>
+                            </property>
+                            <property name="text">
+                                <string>Apply</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="button_filter_reset">
+                            <property name="toolTip">
+                                <string>Reset filters</string>
+                            </property>
+                            <property name="text">
+                                <string>Reset</string>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
+            </item>
+            <item row="1" column="0">
+                <widget class="QTableView" name="view_results">
+                    <property name="styleSheet">
+                        <string notr="true"/>
+                    </property>
+                    <property name="sizeAdjustPolicy">
+                        <enum>QAbstractScrollArea::AdjustToContents</enum>
+                    </property>
+                    <property name="selectionMode">
+                        <enum>QAbstractItemView::ContiguousSelection</enum>
+                    </property>
+                    <property name="selectionBehavior">
+                        <enum>QAbstractItemView::SelectRows</enum>
+                    </property>
+                    <property name="textElideMode">
+                        <enum>Qt::ElideNone</enum>
+                    </property>
+                    <property name="sortingEnabled">
+                        <bool>true</bool>
+                    </property>
+                    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                        <bool>true</bool>
+                    </attribute>
+                    <attribute name="horizontalHeaderStretchLastSection">
+                        <bool>true</bool>
+                    </attribute>
+                </widget>
+            </item>
+        </layout>
     </widget>
-   </item>
-  </layout>
- </widget>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
- <connections>
-  <connection>
-   <sender>button_previous_page</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>previous_page()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>17</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>30</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>button_next_page</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>next_page()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>188</x>
-     <y>16</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>170</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>button_first_page</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>first_page()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>45</x>
-     <y>23</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>27</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>button_last_page</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>last_page()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>224</x>
-     <y>23</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>198</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>input_current_page</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>Form</receiver>
-   <slot>set_page(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>129</x>
-     <y>22</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>92</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>input_category</sender>
-   <signal>currentIndexChanged(int)</signal>
-   <receiver>Form</receiver>
-   <slot>column_filter_changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>352</x>
-     <y>17</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>344</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>button_filter_apply</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>filter_results()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>673</x>
-     <y>14</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>651</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>button_filter_reset</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>filter_reset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>777</x>
-     <y>10</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>765</x>
-     <y>-72</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
- <slots>
-  <slot>next_page()</slot>
-  <slot>previous_page()</slot>
-  <slot>first_page()</slot>
-  <slot>last_page()</slot>
-  <slot>set_page(int)</slot>
-  <slot>column_filter_changed(int)</slot>
-  <slot>filter_results()</slot>
-  <slot>filter_reset()</slot>
- </slots>
+    <resources>
+        <include location="../resources/resources.qrc"/>
+    </resources>
+    <connections>
+        <connection>
+            <sender>button_previous_page</sender>
+            <signal>clicked()</signal>
+            <receiver>Form</receiver>
+            <slot>previous_page()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>85</x>
+                    <y>17</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>30</x>
+                    <y>0</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_next_page</sender>
+            <signal>clicked()</signal>
+            <receiver>Form</receiver>
+            <slot>next_page()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>188</x>
+                    <y>16</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>170</x>
+                    <y>0</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_first_page</sender>
+            <signal>clicked()</signal>
+            <receiver>Form</receiver>
+            <slot>first_page()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>45</x>
+                    <y>23</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>0</x>
+                    <y>27</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_last_page</sender>
+            <signal>clicked()</signal>
+            <receiver>Form</receiver>
+            <slot>last_page()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>224</x>
+                    <y>23</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>198</x>
+                    <y>0</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>input_current_page</sender>
+            <signal>valueChanged(int)</signal>
+            <receiver>Form</receiver>
+            <slot>set_page(int)</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>129</x>
+                    <y>22</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>92</x>
+                    <y>0</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>input_category</sender>
+            <signal>currentIndexChanged(int)</signal>
+            <receiver>Form</receiver>
+            <slot>column_filter_changed(int)</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>352</x>
+                    <y>17</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>344</x>
+                    <y>0</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_filter_apply</sender>
+            <signal>clicked()</signal>
+            <receiver>Form</receiver>
+            <slot>filter_results()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>673</x>
+                    <y>14</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>651</x>
+                    <y>0</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
+            <sender>button_filter_reset</sender>
+            <signal>clicked()</signal>
+            <receiver>Form</receiver>
+            <slot>filter_reset()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>777</x>
+                    <y>10</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>765</x>
+                    <y>-72</y>
+                </hint>
+            </hints>
+        </connection>
+    </connections>
+    <slots>
+        <slot>next_page()</slot>
+        <slot>previous_page()</slot>
+        <slot>first_page()</slot>
+        <slot>last_page()</slot>
+        <slot>set_page(int)</slot>
+        <slot>column_filter_changed(int)</slot>
+        <slot>filter_results()</slot>
+        <slot>filter_reset()</slot>
+    </slots>
 </ui>

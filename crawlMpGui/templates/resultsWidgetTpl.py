@@ -45,7 +45,8 @@ class Ui_Form(object):
         self.button_last_page.setMaximumSize(QtCore.QSize(30, 16777215))
         self.button_last_page.setObjectName("button_last_page")
         self.lyt_paging.addWidget(self.button_last_page)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Minimum,
+                                           QtWidgets.QSizePolicy.Policy.Minimum)
         self.lyt_paging.addItem(spacerItem)
         self.input_category = QtWidgets.QComboBox(Form)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed)

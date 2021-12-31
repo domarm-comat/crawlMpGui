@@ -1,14 +1,14 @@
-from typing import Any
+from typing import Any, List
 
 from PyQt6.QtCore import QAbstractTableModel, QModelIndex, Qt, pyqtSignal
 from PyQt6.QtGui import QColor
+from crawlMp.enums import Header_ref
 
 
 class ResultsViewModel(QAbstractTableModel):
-
     sig_start_sorting = pyqtSignal(int, Qt.SortOrder)
 
-    def __init__(self, hits: list, header: list, count_offset=0):
+    def __init__(self, hits: List[Any], header: List[Header_ref], count_offset: int = 0) -> None:
         self.hits = hits
         self.header = header
         self.count_offset = count_offset
