@@ -5,14 +5,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="crawlMpGui",
-    version="0.0.3",
+    version="0.0.4",
     license='MIT',
     author="Martin Domaracký",
     author_email="domarm@comat.sk",
     description="GUI for CrawlMp",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/domarm-comat/crawlMp",
+    url="https://github.com/domarm-comat/crawlMpGui",
     packages=setuptools.find_packages(),
     #package_data={'crawlMp.tests': ['fs_files.txt', 'fs_win_files.txt']},
     scripts=['crawlMpGui/scripts/search_fs_mp_gui'],
