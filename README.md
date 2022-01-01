@@ -1,6 +1,10 @@
 # crawlMp-gui
 
-Graphical interface for crawlMp
+![GitHub](https://img.shields.io/github/license/domarm-comat/crawlMpGui)
+
+Graphical interface for crawlMp.  
+Results are paged into page_sized chunks.  
+User can sort hits by column and apply multiple filter based on column type.  
 
 # Icons attribution
 
