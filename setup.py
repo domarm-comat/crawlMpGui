@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="crawlMpGui",
-    version="0.0.5",
+    version="0.0.7",
     license='MIT',
     author="Martin Domaracký",
     author_email="domarm@comat.sk",
@@ -14,7 +14,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/domarm-comat/crawlMpGui",
     packages=setuptools.find_packages(),
-    #package_data={'crawlMp.tests': ['fs_files.txt', 'fs_win_files.txt']},
+    package_data={'crawlMpGui.resources': ['*.*'],
+                  'crawlMpGui.templates': ['*.*']},
     scripts=['crawlMpGui/scripts/search_fs_mp_gui'],
     classifiers=[
         "Programming Language :: Python :: 3",

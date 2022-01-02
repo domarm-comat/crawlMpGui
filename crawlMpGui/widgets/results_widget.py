@@ -32,9 +32,6 @@ class ResultsWidget(QWidget, Ui_Form):
 
         self.results: Optional[Results] = None
         self.results_copy: Optional[Results] = None
-        # Set icon buttons
-        self.button_filter_apply.setIcon(QIcon("icons:arrow-right.png"))
-        self.button_filter_reset.setIcon(QIcon("icons:reset.png"))
         # Preload resources
         self.done_icon = QPixmap("icons:done.png").scaledToHeight(24)
         self.loading_movie = QMovie("icons:loading.gif")

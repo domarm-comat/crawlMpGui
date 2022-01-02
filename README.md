@@ -6,6 +6,13 @@ Graphical interface for crawlMp implemented in PyQt6.
 Results are paged into page_sized chunks.  
 User can sort hits by column and apply multiple filter based on column type.
 
+# Installation
+
+`python3 -m pip install crawlMpGui`
+
+* In case of `ImportError: libQt6Widgets.so.6`, execute:  
+`export LD_LIBRARY_PATH=/home/domarm/Qt/6.2.1/gcc_64/lib:$LD_LIBRARY_PATH`
+
 # Usage examples #
 
 ### Scripts ###
