@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="crawlMpGui",
-    version="0.0.7",
+    version="0.0.8",
     license='MIT',
     author="Martin Domaracký",
     author_email="domarm@comat.sk",

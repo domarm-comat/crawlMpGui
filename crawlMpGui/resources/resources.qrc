@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>arrow-right.png</file>
+    <file>done.png</file>
+    <file>loading.gif</file>
+    <file>reset.png</file>
+  </qresource>
+</RCC>

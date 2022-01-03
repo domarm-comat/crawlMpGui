@@ -11,12 +11,8 @@ from crawlMp.crawlMp import CrawlMp
 from crawlMp.crawlers.crawler_fs import CrawlerSearchFs
 from crawlMp.enums import Mode
 
-import crawlMpGui
-from crawlMpGui import __version__
+from crawlMpGui import __version__, set_resources
 from crawlMpGui.widgets.results_widget import ResultsWidget
-
-path = os.path.dirname(crawlMpGui.__file__)
-QtCore.QDir.addSearchPath('icons', os.path.join(path, 'resources'))
 
 description = [
     f"crawlMp v{__version__}",
@@ -35,6 +31,7 @@ description = [
     "",
 ]
 
+set_resources()
 arguments = sys.argv
 parser = argparse.ArgumentParser(
     formatter_class=argparse.RawTextHelpFormatter,
