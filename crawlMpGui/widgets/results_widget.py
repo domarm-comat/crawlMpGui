@@ -1,14 +1,16 @@
 import re
 from copy import copy
+from importlib.resources import path
 from operator import itemgetter
 from threading import Thread
 from typing import Optional, List, Any
 
-from PyQt6.QtCore import pyqtSlot, pyqtSignal, Qt, QSize
-from PyQt6.QtGui import QMovie, QPixmap, QIcon
+from PyQt6.QtCore import pyqtSlot, pyqtSignal, Qt, QSize, QResource
+from PyQt6.QtGui import QMovie, QPixmap
 from PyQt6.QtWidgets import QWidget, QMessageBox
 from crawlMp.results import Results
 
+from crawlMpGui import resources
 from crawlMpGui.templates.resultsWidgetTpl import Ui_Form
 from crawlMpGui.widgets.results_view import ResultsViewModel
 
@@ -29,12 +31,18 @@ class ResultsWidget(QWidget, Ui_Form):
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
         self.setupUi(self)
-
+        QResource()
         self.results: Optional[Results] = None
         self.results_copy: Optional[Results] = None
         # Preload resources
-        self.done_icon = QPixmap("icons:done.png").scaledToHeight(24)
-        self.loading_movie = QMovie("icons:loading.gif")
+        with path(resources, "done.png") as f_path:
+            self.done_icon = QPixmap(str(f_path)).scaledToHeight(24)
+        with path(resources, "loading.gif") as f_path:
+            self.loading_movie = QMovie(str(f_path))
+        # with path(resources, "arrow-right.png") as f_path:
+        #     self.button_filter_apply.setIcon(QIcon(QPixmap(str(f_path)).scaledToHeight(24)))
+        # with path(resources, "reset.png") as f_path:
+        #     self.button_filter_reset.setIcon(QIcon(QPixmap(str(f_path)).scaledToHeight(24)))
         self.loading_movie.setScaledSize(QSize(24, 24))
         self.loading_movie.start()
 

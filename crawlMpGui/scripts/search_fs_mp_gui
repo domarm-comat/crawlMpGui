@@ -5,13 +5,12 @@ import os
 import signal
 import sys
 
-from PyQt6 import QtCore
 from PyQt6.QtWidgets import QApplication
 from crawlMp.crawlMp import CrawlMp
 from crawlMp.crawlers.crawler_fs import CrawlerSearchFs
 from crawlMp.enums import Mode
 
-from crawlMpGui import __version__, set_resources
+from crawlMpGui import __version__
 from crawlMpGui.widgets.results_widget import ResultsWidget
 
 description = [
@@ -31,7 +30,6 @@ description = [
     "",
 ]
 
-set_resources()
 arguments = sys.argv
 parser = argparse.ArgumentParser(
     formatter_class=argparse.RawTextHelpFormatter,

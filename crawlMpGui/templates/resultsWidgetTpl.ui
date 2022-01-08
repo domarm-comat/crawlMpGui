@@ -28,7 +28,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../resources/resources.qrc">:/icons/loading.gif</pixmap>
+        <pixmap resource="../resources/resources.qrc">:/icons/done.png</pixmap>
        </property>
       </widget>
      </item>

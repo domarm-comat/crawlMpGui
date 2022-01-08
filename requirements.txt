@@ -1,2 +1,2 @@
-crawlMp>=0.3.7
-PyQt6>=6.1.0
+crawlMp
+PyQt6
